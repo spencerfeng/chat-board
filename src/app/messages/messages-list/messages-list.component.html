@@ -1,0 +1,25 @@
+<div class="client-body">
+  <div class="messages-container">
+    <div class="message-pane-scroller pt-4">
+      <ng-container *ngIf="messagesForSelectedChannelState | async">
+        <div *ngFor="let message of messagesForSelectedChannelState | async" class="message-item px-4 py-2 relative hover:bg-grey-light group">
+          <div class="flex">
+            <div class="message-sender-avatar mr-2 w-35px flex-none">
+              <img src="https://ca.slack-edge.com/T0B6Z0ZL1-U99HHTEFK-g611a2a7b5c8-48" class="rounded block w-full" alt="avatar">
+            </div>
+            <div class="message-main flex-grow">
+              <div class="message-header flex items-center mb-2">
+                <div class="message-sender-name font-bold mr-2">{{ message.createdBy.firstName }} {{ message.createdBy.lastName }}</div>
+                <div class="message-sent-time text-xs text-grey">{{ message.createdAt | date }} {{ message.createdAt | date:'shortTime' }}</div>
+              </div>
+              <div class="message-body text-sm leading-normal">{{ message.body }}</div>
+            </div>
+          </div>
+          <div class="rounded hidden group-hover:block absolute" style="right: 10px; top: -10px;">
+            <button (click)="deleteMessage(message._id)" *ngIf="(message.createdBy._id === (authState | async)?.userId) || (authState | async)?.isAdmin" class="text-xs text-grey-dark border rounded border-grey-dark px-2 py-2 bg-white">Delete</button>
+          </div>
+        </div><!-- .message-item -->
+      </ng-container>
+    </div>
+  </div>
+</div>

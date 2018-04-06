@@ -1,0 +1,10 @@
+<ul class="list-reset text-grey-light mb-3">
+  <li *ngFor="let channel of (channelsState | async)" routerLinkActive="active-channel-item" class="py-2 hover:bg-red relative">
+    <a routerLink="{{ channel._id}}" class="block text-white no-underline pl-6 pr-4">
+      <span class="mr-1">#</span>{{ channel.name }}
+    </a>
+    <button *ngIf="((authState | async)?.isAdmin && channel.deletable)" (click)="deleteChannel(channel._id)" class="absolute text-white" style="right: 5px; top: 50%; margin-top: -9px;">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </button>
+  </li>
+</ul>

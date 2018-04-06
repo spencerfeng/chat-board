@@ -1,0 +1,8 @@
+<form [formGroup]="messageCreateForm" (ngSubmit)="onSubmit()" class="w-full flex">
+  <input
+      type="text"
+      id="message"
+      formControlName="message"
+      class="appearance-none w-full rounded-lg border-2 border-grey px-4 py-3 border-box mr-4">
+  <button type="submit" class="uppercase rounded-lg bg-red text-white text-sm px-6 py-4">Send</button>
+</form>

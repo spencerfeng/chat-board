@@ -1,0 +1,14 @@
+<div class="team-section px-4 py-6 border-b border-grey-dark">
+  <h1 class="team-name text-white text-xl mb-2">Chat Board</h1>
+  <div class="team-user text-white text-xs flex items-center">
+    <div class="presence-indicator w-2 h-2 bg-red rounded-full mr-1"></div>
+    <div>{{ (authState | async)?.firstName }} {{ (authState | async)?.lastName }}</div>
+  </div>
+</div>
+<app-channels></app-channels>
+<div class="bottom-section py-6">
+  <div class="text-center">
+    <button type="button" (click)="logout()" class="appearance-none rounded px-3 py-2 uppercase border rounded border-white text-white text-xs hover:bg-white hover:text-red">Logout</button>
+  </div>
+</div>
+

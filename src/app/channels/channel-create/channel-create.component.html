@@ -1,0 +1,12 @@
+<form [formGroup]="channelCreateForm" (ngSubmit)="onSubmit()" class="flex items-center py-2">
+  <div class="w-2/3 px-2">
+    <input
+        type="text"
+        id="name"
+        formControlName="name"
+        class="appearance-none rounded px-3 py-2 w-full text-sm">
+  </div>
+  <div class="w-1/3 pr-2">
+    <button type="submit" [disabled]="channelCreateForm.invalid || submitting" class="bg-red text-white rounded uppercase text-xs px-3 py-2 w-full">Create</button>
+  </div>
+</form>

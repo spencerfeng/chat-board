@@ -1,0 +1,15 @@
+<div class="min-h-screen bg-grey-lightest flex flex-col">
+  <header class="flex flex-none justify-between px-6 py-4 border-b text-grey-darkest items-center">
+    <h1 class="text-xl flex items-center">
+      <img src="../../assets/logo.svg" alt="chat board logo" class="mr-2 block" style="width: 30px; height: 30px;">
+      Chat Board
+    </h1>
+    <ul class="list-reset flex">
+      <li class="ml-4"><a routerLink="/auth/signin" routerLinkActive="text-red" class="no-underline text-grey-darkest">Sign In</a></li>
+      <li class="ml-4"><a routerLink="/auth/signup" routerLinkActive="text-red" class="no-underline text-grey-darkest">Sign Up</a></li>
+    </ul>
+  </header>
+  <div class="flex-grow flex items-center justify-center">
+    <router-outlet></router-outlet>
+  </div>
+</div>

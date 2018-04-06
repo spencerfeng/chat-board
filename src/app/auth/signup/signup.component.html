@@ -1,0 +1,46 @@
+<div class="flex flex-col h-full justify-center w-500px px-40px py-40px border rounded">
+  <h1 class="mb-8">Sign Up</h1>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="text-grey-darkest w-full">
+    <div class="mb-4">
+      <label for="first-name" class="mb-2 block">First Name</label>
+      <input
+        type="text"
+        id="first-name"
+        formControlName="firstName"
+        class="appearance-none w-full rounded-lg border border-grey px-4 py-3 border-box mr-4">
+      <div class="form-validation-err" *ngIf="firstName.invalid && firstName.errors.required && (firstName.dirty || firstName.touched)">Please enter your first name</div>
+    </div>
+    <div class="mb-4">
+      <label for="last-name" class="mb-2 block">Last Name</label>
+      <input
+          type="text"
+          id="last-name"
+          formControlName="lastName"
+          class="appearance-none w-full rounded-lg border border-grey px-4 py-3 border-box mr-4">
+      <div class="form-validation-err" *ngIf="lastName.invalid && lastName.errors.required && (lastName.dirty || lastName.touched)">Please enter your last name</div>
+    </div>
+    <div class="mb-4">
+      <label for="email" class="mb-2 block">Email</label>
+      <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="appearance-none w-full rounded-lg border border-grey px-4 py-3 border-box mr-4">
+      <div class="form-validation-err" *ngIf="email.invalid && email.errors.required && (email.dirty || email.touched)">Please enter an email</div>
+      <div class="form-validation-err" *ngIf="email.invalid && email.errors.email && (email.dirty || email.touched)">Please enter a valid email</div>
+      <div class="form-validation-err" *ngIf="email.invalid && email.errors.emailTaken && (email.dirty || email.touched)">This email is already taken</div>
+    </div>
+    <div class="mb-4">
+      <label for="password" class="mb-2 block">Password</label>
+      <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="appearance-none w-full rounded-lg border border-grey px-4 py-3 border-box mr-4">
+      <div class="form-validation-err" *ngIf="password.invalid && password.errors.required && (password.dirty || password.touched)">Please enter a password</div>
+    </div>
+    <div>
+      <input type="submit" value="Sign Up" class="btn btn-red" [disabled]="signUpForm.invalid">
+    </div>
+  </form>
+</div>

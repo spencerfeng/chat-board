@@ -1,0 +1,10 @@
+<div class="channels-section py-6 border-b border-grey-dark">
+  <div class="px-4 flex items-center justify-between mb-2">
+    <h2 class="text-lg text-white">Channels</h2>
+    <button class="text-white" (click)="toggleCreateChannel()">
+      <i class="fa fa-plus-circle" aria-hidden="true"></i>
+    </button>
+  </div>
+  <app-channel-create *ngIf="startAddingNewChannelState | async"></app-channel-create>
+  <app-channels-list></app-channels-list>
+</div><!-- .channel-section -->
