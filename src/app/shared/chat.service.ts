@@ -4,7 +4,7 @@ import * as fromChannelsList from '../store/reducers/channelsList.reducers';
 
 export class ChatService {
 
-  private url = 'http://localhost:3000';
+  private url = 'https://localhost:3000';
   socket = io(this.url);
 
   broadcastNewChannelAddedToServer(channel: fromChannelsList.ChannelWithMessages) {
