@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "slack-clone",
+    "name": "chat-board",
     "ejected": true
   },
   "apps": [
