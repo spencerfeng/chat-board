@@ -1,3 +1,3 @@
-# ChatBoard
+# Chat Board
 
-ChatBoard is a message app built with Angular 5, Tailwind CSS and socket.io.
+Chat Board is a message app built with Angular 5, Tailwind CSS and socket.io.
