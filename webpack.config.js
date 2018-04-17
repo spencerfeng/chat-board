@@ -507,6 +507,10 @@ module.exports = {
       "/api": {
         "target": "http://localhost:3000",
         "secure": false
+      },
+      "/chat": {
+        "target": "http://localhost:3000",
+        "secure": false
       }
     }
   }
