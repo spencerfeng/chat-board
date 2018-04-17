@@ -4,8 +4,12 @@ import * as fromChannelsList from '../store/reducers/channelsList.reducers';
 
 export class ChatService {
 
-  private url = 'https://localhost:3000';
-  socket = io(this.url);
+  private url = '/';
+  socket = io(this.url, {
+    secure: true,
+    rejectUnauthorized: false,
+    path: '/chat/socket.io'
+  });
 
   broadcastNewChannelAddedToServer(channel: fromChannelsList.ChannelWithMessages) {
     this.socket.emit('new-channel-added', channel);

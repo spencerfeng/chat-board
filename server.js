@@ -4,7 +4,9 @@ const app = require('./server/app');
 const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 
-const io = require('socket.io')(server);
+const io = require('socket.io')(server, {
+  path: '/chat/socket.io'
+});
 
 io.on('connection', (socket) => {
   console.log('user connected');
